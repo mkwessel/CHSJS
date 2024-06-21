@@ -1,0 +1,19 @@
+---
+title: "Clearwater Harbor and Saint Joseph Sound"
+subtitle: "Nutrient Source Tracking Study"
+page-layout: full
+---
+
+# Background:
+
+Welcome to the Mustique Environmental Monitoring Page where a synopsis of environmental monitoring programs and data visualizations can be found at the tabs on the left hand side of the page. This site is currently in development.   
+
+## Goal: 
+Monitor and improve ecological health on Mustique by collecting data to inform science-based decision making.
+
+## Objective:
+Develop an efficient and effective routine monitoring strategy designed to evaluate the ecological health of valued natural resources. 
+
+# Conceptual Model
+The goals and objectives were formulated around a "Ridge to Reef" conceptual model that integrates all components around a central theme of connectedness. 
+

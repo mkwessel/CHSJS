@@ -1,0 +1,53 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "Clearwater Harbor and Saint Joseph Sound"
+  site-url: "https://mkwessel.github.io/CHSJS"
+  repo-url: "https://github.com/mkwessel/CHSJS"
+  repo-actions: [edit, source, issue]
+  favicon: images/favicon.ico
+
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy; CC-1.0"
+
+  sidebar:
+    background: "#50C1CC"
+    logo: "Z:/Shared/Projects/2020/D202001308.05 - Clearwater Harbor St. Joseph Sound FY24/logo cropped.jpg"
+    favicon: images/favicon.ico
+    pinned: true
+    align: center
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Main Page
+      - href: content/Rain.Rmd
+        text: Rainfall
+      - href: content/Watershed.Rmd
+        text: Watershed
+      - href: content/Mangroves.Rmd
+        text: Mangroves
+      - href: content/Seagrass.Rmd
+        text: Seagrass
+      - href: content/Corals.Rmd
+        text: Corals
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+
+filters:
+ - quarto
+
+
