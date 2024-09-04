@@ -16,7 +16,7 @@ percentile <- function(x){
   rank_x/max(rank_x) * 100
 }
 
-df_raw = readRDS(file.path("data", "CHSJS_WQ_Data.rds"))
+df_raw = readRDS(url("https://github.com/mkwessel/CHSJS/raw/main/CHSJS_WQ_Data.rds"))
 
 site_locs = df_raw |> 
   select(Site, Lat, Lon) |> 
