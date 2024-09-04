@@ -1,0 +1,10 @@
+name: chsjs
+title:
+username: esassoc
+account: esassoc
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12600428
+bundleId: 9059497
+url: https://esassoc.shinyapps.io/chsjs/
+version: 1
