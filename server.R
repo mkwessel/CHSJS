@@ -46,7 +46,7 @@ shinyServer(function(input, output, session) {
   output$tsPlot <- renderPlotly({
     p = ggplot(datSub3(), aes(x = Date, y = Value, color = Site)) + 
       geom_point() +
-      geom_line() +
+      geom_line(alpha = 0.6) +
       labs(x = "", y = input$parameter) +
       theme_bw()
     
