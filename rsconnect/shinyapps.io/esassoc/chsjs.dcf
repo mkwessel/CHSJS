@@ -5,6 +5,6 @@ account: esassoc
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12600428
-bundleId: 9071491
+bundleId: 9506559
 url: https://esassoc.shinyapps.io/chsjs/
 version: 1

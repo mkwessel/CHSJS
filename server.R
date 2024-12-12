@@ -44,6 +44,7 @@ shinyServer(function(input, output, session) {
   # Time Series Plot --------------------------------------------------------
   
   output$tsPlot <- renderPlotly({
+    req(datSub3(), nrow(datSub3()) > 0)
     p = ggplot(datSub3(), aes(x = Date, y = Value, color = Site)) + 
       geom_point() +
       geom_line(alpha = 0.6) +
@@ -56,6 +57,7 @@ shinyServer(function(input, output, session) {
   # Box Plot ----------------------------------------------------------------
   
   output$boxPlot <- renderPlotly({
+    req(datSub3(), nrow(datSub3()) > 0)
     p = ggplot(datSub3(), aes(x = Site, y = Value)) + 
       geom_boxplot(alpha = 0.3, fill = "grey80") +
       labs(y = input$parameter) +
@@ -69,6 +71,7 @@ shinyServer(function(input, output, session) {
   # Bar Plot ----------------------------------------------------------------
   
   barSumm <- reactive({
+    req(datSub3(), nrow(datSub3()) > 0)
     datSub3() |> 
       group_by(Site) |> 
       summarise(Value = statFN()(Value, na.rm = TRUE))
@@ -87,6 +90,7 @@ shinyServer(function(input, output, session) {
   # Tile Plot ---------------------------------------------------------------
   
   tileSumm <- reactive({
+    req(datSub2(), nrow(datSub2()) > 0)
     datSub2() |> 
       group_by(Site, Parameter) |> 
       summarise(Value = statFN()(Value, na.rm = TRUE)) |> 
@@ -109,7 +113,7 @@ shinyServer(function(input, output, session) {
   # Map ---------------------------------------------------------------------
   
   mapData <- reactive({
-    req(datSub3())
+    req(datSub3(), nrow(datSub3()) > 0)
     datSub3() |> 
       group_by(Site, Parameter) |> 
       summarise(Value = statFN()(Value, na.rm = TRUE)) |>
@@ -148,6 +152,7 @@ shinyServer(function(input, output, session) {
   # Table/Download -------------------------------------------------------------------
   
   tableDownload <- reactive({
+    req(datSub3(), nrow(datSub3()) > 0)
     mutate(datSub3(), Date = as.character(Date))
   })
   
