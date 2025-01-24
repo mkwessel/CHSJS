@@ -24,6 +24,7 @@ shinyServer(function(input, output, session) {
   observe({
     req(datSub1())
     params = sort(unique(datSub1()$Parameter))
+
     if (is.null(rv$last_param) || input$parameter != rv$last_param) rv$last_param = input$parameter
     sel = if (rv$last_param %in% params) rv$last_param else params[1]
     updateSelectInput(session, 'parameter', choices = params, selected = sel)
@@ -118,7 +119,7 @@ shinyServer(function(input, output, session) {
       group_by(Site, Parameter) |> 
       summarise(Value = statFN()(Value, na.rm = TRUE)) |>
       mutate(Popup = paste(Parameter, "<br>", Value)) |> 
-      left_join(site_locs)
+      left_join(site_locs, by = join_by(Site))
   })
   
   output$map <- renderLeaflet({
